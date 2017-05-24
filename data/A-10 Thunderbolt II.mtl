@@ -1,0 +1,1790 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub Material__607 (2) to come 
+#
+newmtl Nacelle_Out_Righ
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd NACELR.BMP
+bump NACELR_B.BMP
+#
+newmtl Nacelles_In
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__607 done 
+#
+# Multi/Sub Material__596 (2) to come 
+#
+newmtl Vert_Fin_Out_Rig
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd VFINOR.BMP
+bump VFINOR_B.BMP
+#
+newmtl Vert_Fin_In
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd VFINI.BMP
+bump VFINI_B.BMP
+#
+# Multi/Sub Material__596 done 
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__585 (9) to come 
+#
+newmtl Fuselage_Right
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSER.BMP
+bump FUSER_B.BMP
+#
+newmtl Fuselage_Bttm
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSEB.BMP
+bump FUSEB_B.BMP
+#
+newmtl Fuselage_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSET.BMP
+bump FUSET_B.BMP
+#
+newmtl Fuselage_Left
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSEL.BMP
+bump FUSEL_B.BMP
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Nose_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSENT.BMP
+bump FUSENT_B.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__585 done 
+#
+newmtl Tailplane_Right
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd TAILPR.BMP
+bump TAILPR_B.BMP
+#
+# Multi/Sub Material__574 (2) to come 
+#
+newmtl Gear_03_Pod
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd G3POD.BMP
+bump G3POD_B.BMP
+#
+newmtl Chaff_Disp_Pods
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd CFPOD.BMP
+bump CFPOD.BMP
+#
+# Multi/Sub Material__574 done 
+#
+newmtl Glass
+Ka  0.4 0.4 0.4
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  0.3
+Ns  10.0
+illum 2
+#
+newmtl Slat_Right
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd SLATR.BMP
+#
+newmtl Slat_Left
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd SLATL.BMP
+#
+newmtl Strakes
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd STRAKES.BMP
+bump STRAKE_B.BMP
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Gunmetal
+Ka  0.4 0.4 0.5
+Kd  0.4 0.4 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__563 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__563 done 
+#
+# Multi/Sub Material__552 (3) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Fuselage_Right
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSER.BMP
+bump FUSER_B.BMP
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+# Multi/Sub Material__552 done 
+#
+# Multi/Sub Material__541 (3) to come 
+#
+newmtl WndShld_Frame_S
+Ka  0.5 0.0 0.0
+Kd  0.5 0.0 0.0
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WSFS.BMP
+bump WSFS_B.BMP
+#
+newmtl WndShld_Frame_T
+Ka  0.1 0.0 0.5
+Kd  0.1 0.0 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WSFT.BMP
+bump WSFT_B.BMP
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+# Multi/Sub Material__541 done 
+#
+# Multi/Sub Material__530 (2) to come 
+#
+newmtl Gear01Door_A
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd G01DOORA.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__530 done 
+#
+# Multi/Sub Material__519 (2) to come 
+#
+newmtl Gear01_Door_B
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd G01DOORB.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__519 done 
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+# Multi/Sub Material__508 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__508 done 
+#
+# Multi/Sub Material__497 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__497 done 
+#
+newmtl Exhaust
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+# Multi/Sub Material__486 (2) to come 
+#
+newmtl Rudders_In
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd RUDDI.BMP
+bump RUDDO_B.BMP
+#
+newmtl Rudders_Out
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd RUDDO.BMP
+bump RUDDO_B.BMP
+#
+# Multi/Sub Material__486 done 
+#
+newmtl Pave_Penny_Mnt
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PPMNT.BMP
+bump PPMNT_B.BMP
+#
+newmtl Gloss_White
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.0
+illum 2
+#
+# Multi/Sub Material__475 (3) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__475 done 
+#
+# Multi/Sub Material__464 (3) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Gloss_Black
+Ka  0.1 0.1 0.1
+Kd  0.1 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__464 done 
+#
+# Multi/Sub Material__453 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__453 done 
+#
+newmtl Aileron_Right_Bt
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd AILRNBR.BMP
+bump AILRNR_B.BMP
+#
+newmtl Aileron_Cover_Ri
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd ALCVRR.BMP
+bump ALCVRR_B.BMP
+#
+newmtl Red_Light
+Ka  0.4 0.0 0.0
+Kd  0.4 0.0 0.0
+Ks  1.0 0.9 0.9
+d  1.0
+Ns  9.0
+illum 2
+#
+# Multi/Sub Material__442 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Aileron_Right_To
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd AILRNR.BMP
+bump AILRNR_B.BMP
+#
+# Multi/Sub Material__442 done 
+#
+# Multi/Sub Material__431 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__431 done 
+#
+# Multi/Sub Material__420 (6) to come 
+#
+newmtl Wing_Top_R
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WINGTR.BMP
+bump WINGTR_B.BMP
+#
+newmtl WingTip_Light_St
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WTLS.BMP
+#
+newmtl Wing_Bttm_R
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WINGBR.BMP
+bump WINGBR_B.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Chaff_Disp_Wingt
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd CFWING.BMP
+bump CFWING.BMP
+#
+# Multi/Sub Material__420 done 
+#
+# Multi/Sub Material__409 (2) to come 
+#
+newmtl Flap_Right_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FLAPRT.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__409 done 
+#
+newmtl Aileron_Cover_Le
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd ALCVRL.BMP
+bump ALCVRL_B.BMP
+#
+newmtl Aileron_Left_Btt
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd AILRNBL.BMP
+bump AILRNL_B.BMP
+#
+# Multi/Sub Material__398 (2) to come 
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__398 done 
+#
+# Multi/Sub Material__387 (2) to come 
+#
+newmtl Flap_Left_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FLAPLT.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+# Multi/Sub Material__387 done 
+#
+# Multi/Sub Material__376 (2) to come 
+#
+newmtl Rudders_In
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd RUDDI.BMP
+bump RUDDO_B.BMP
+#
+newmtl Rudders_Out
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd RUDDO.BMP
+bump RUDDO_B.BMP
+#
+# Multi/Sub Material__376 done 
+#
+# Multi/Sub Material__365 (4) to come 
+#
+newmtl Vert_Fin_Out_Lef
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd VFINOL.BMP
+bump VFINOL_B.BMP
+#
+newmtl Vert_Fin_In
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd VFINI.BMP
+bump VFINI_B.BMP
+#
+newmtl Fuselage_Left
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd FUSEL.BMP
+bump FUSEL_B.BMP
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+# Multi/Sub Material__365 done 
+#
+newmtl Tailplane_Left
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd TAILPL.BMP
+bump TAILPL_B.BMP
+#
+# Multi/Sub Material__354 (2) to come 
+#
+newmtl Stab_Btm
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd STABB.BMP
+bump STABB_B.BMP
+#
+newmtl Stab_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd STABT.BMP
+bump STABT_B.BMP
+#
+# Multi/Sub Material__354 done 
+#
+# Multi/Sub Material__343 (2) to come 
+#
+newmtl Gear_02_Pod
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd G2POD.BMP
+bump G2POD_B.BMP
+#
+newmtl Chaff_Disp_Pods
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd CFPOD.BMP
+bump CFPOD.BMP
+#
+# Multi/Sub Material__343 done 
+#
+newmtl Drop_Tank
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DTANK.BMP
+bump DTANK_B.BMP
+#
+newmtl Pylon_1
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON1.BMP
+bump PYLON1_B.BMP
+#
+newmtl Pylons_3
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON3.BMP
+bump PYLON3_B.BMP
+#
+newmtl Pylons_4
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON4.BMP
+bump PYLON4_B.BMP
+#
+newmtl Pylons_5
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON5.BMP
+bump PYLON5_B.BMP
+#
+newmtl Pylons_6
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON6.BMP
+bump PYLON6_B.BMP
+#
+newmtl Pylons_2
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd PYLON2.BMP
+bump PYLON2_B.BMP
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+# Multi/Sub Material__332 (2) to come 
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+# Multi/Sub Material__332 done 
+#
+newmtl Blk_Trim
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  1.8
+illum 2
+#
+# Multi/Sub Material__321 (3) to come 
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__321 done 
+#
+newmtl Chute
+Ka  0.4 0.4 0.3
+Kd  0.4 0.4 0.3
+Ks  0.7 0.7 0.6
+d  1.0
+Ns  0.8
+illum 2
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__310 (6) to come 
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+newmtl Chute
+Ka  0.4 0.4 0.3
+Kd  0.4 0.4 0.3
+Ks  0.7 0.7 0.6
+d  1.0
+Ns  0.8
+illum 2
+#
+newmtl Blk_Hose
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  4.0
+illum 2
+#
+newmtl Canister
+Ka  0.4 0.7 0.4
+Kd  0.4 0.7 0.4
+Ks  0.9 1.0 0.9
+d  1.0
+Ns  2.3
+illum 2
+#
+# Multi/Sub Material__310 done 
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+# Multi/Sub Material__299 (3) to come 
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+# Multi/Sub Material__299 done 
+#
+newmtl Canister
+Ka  0.4 0.7 0.4
+Kd  0.4 0.7 0.4
+Ks  0.9 1.0 0.9
+d  1.0
+Ns  2.3
+illum 2
+#
+newmtl Brass
+Ka  1.0 0.8 0.6
+Kd  1.0 0.8 0.6
+Ks  1.0 1.0 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Blk_Hose
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  4.0
+illum 2
+#
+# Multi/Sub Material__288 (3) to come 
+#
+newmtl Cushion
+Ka  0.6 0.6 0.4
+Kd  0.6 0.6 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+# Multi/Sub Material__288 done 
+#
+# Multi/Sub Material__277 (2) to come 
+#
+newmtl Seat
+Ka  0.7 0.7 0.8
+Kd  0.7 0.7 0.8
+Ks  0.8 0.9 0.9
+d  1.0
+Ns  4.0
+illum 2
+#
+newmtl Yellow
+Ka  1.0 0.8 0.3
+Kd  1.0 0.8 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.2
+illum 2
+#
+# Multi/Sub Material__277 done 
+#
+newmtl Silver_Sticker
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__266 (2) to come 
+#
+newmtl Interior_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGULLGR.BMP
+#
+newmtl Instrument_Panel
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd INSTPNL.BMP
+#
+# Multi/Sub Material__266 done 
+#
+# Multi/Sub Material__255 (4) to come 
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+newmtl Tire_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+newmtl Red_Button
+Ka  0.8 0.1 0.2
+Kd  0.8 0.1 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  5.0
+illum 2
+#
+# Multi/Sub Material__255 done 
+#
+# Multi/Sub Material__244 (2) to come 
+#
+newmtl Gloss_White
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  6.0
+illum 2
+#
+newmtl Steel
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__244 done 
+#
+# Multi/Sub Material__233 (3) to come 
+#
+newmtl Interior_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGULLGR.BMP
+#
+newmtl Interior_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.8
+illum 2
+#
+newmtl Int_Side_Console
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd SCONSLS.BMP
+#
+# Multi/Sub Material__233 done 
+#
+# Multi/Sub Material__222 (3) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Glass
+Ka  0.4 0.4 0.4
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  0.3
+Ns  10.0
+illum 2
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__222 done 
+#
+# Multi/Sub Material__211 (2) to come 
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__211 done 
+#
+# Multi/Sub Material__200 (2) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Tire_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__200 done 
+#
+# Multi/Sub Material__189 (2) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__189 done 
+#
+newmtl Black_Hoses
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  3.2
+illum 2
+#
+newmtl Chrome_Yellow
+Ka  1.0 0.8 0.0
+Kd  1.0 0.8 0.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  7.0
+illum 2
+#
+# Multi/Sub Material__178 (2) to come 
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__178 done 
+#
+# Multi/Sub Material__167 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__167 done 
+#
+# Multi/Sub Material__156 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__156 done 
+#
+# Multi/Sub Material__145 (2) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__145 done 
+#
+# Multi/Sub Material__134 (2) to come 
+#
+newmtl Chrome
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__134 done 
+#
+# Multi/Sub Material__123 (2) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Tire_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__123 done 
+#
+# Multi/Sub Material__112 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__112 done 
+#
+# Multi/Sub Material__101 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__101 done 
+#
+# Multi/Sub Material__90 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__90 done 
+#
+newmtl Nacelle_Mnt_R
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd NAMNTTR.BMP
+bump NAMNTR_B.BMP
+#
+# Multi/Sub Material__79 (2) to come 
+#
+newmtl Nacelle_Out_Left
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd NACELL.BMP
+bump NACELL_B.BMP
+#
+newmtl Nacelles_In
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__79 done 
+#
+# Multi/Sub Material__68 (2) to come 
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+newmtl Tire_Black
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+#
+# Multi/Sub Material__68 done 
+#
+# Multi/Sub Material__57 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Wheel_Well_Gray
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  8.0
+illum 2
+#
+# Multi/Sub Material__57 done 
+#
+# Multi/Sub Material__46 (6) to come 
+#
+newmtl Wing_Top_L
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WINGTL.BMP
+bump WINGTL_B.BMP
+#
+newmtl WingTip_Light_St
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WTLS.BMP
+#
+newmtl Wing_Bttm_L
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd WINGBL.BMP
+bump WINGBL_B.BMP
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Dark_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd DGGRAY.BMP
+#
+newmtl Chaff_Disp_Wingt
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd CFWING.BMP
+bump CFWING.BMP
+#
+# Multi/Sub Material__46 done 
+#
+# Multi/Sub Material__35 (2) to come 
+#
+newmtl Light_Ghost_Gray
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd LGGRAY.BMP
+#
+newmtl Aileron_Left_Top
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd AILRNL.BMP
+bump AILRNL_B.BMP
+#
+# Multi/Sub Material__35 done 
+#
+newmtl Nacelle_Mnt_L
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  1.2
+illum 2
+map_Kd NAMNTTL.BMP
+#
+# EOF
