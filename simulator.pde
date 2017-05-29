@@ -7,6 +7,7 @@ public Scene scene;
 InteractiveFrame Avion;
 
 PShape plane;
+PFont font;
 
 float speed=0;
 float maxSpeed=0.3;
@@ -28,6 +29,8 @@ boolean rightYaw= false;
 
 
 void setup(){
+  font = loadFont("FreeSans-13.vlw");
+  textFont(font);
   size(600,600,P3D);
   scene = new Scene(this);
   plane = loadShape("A10.obj");
@@ -53,6 +56,7 @@ void draw(){
   translate(width/2,height/2);
   rotateZ(PI);
   moving();
+  drawText();
 }
 
 void keyPressed(){
@@ -121,4 +125,11 @@ void moving(){
 }
   
   Avion.setPosition(new Vec(posX, posY, posZ));
+}
+
+
+void  drawText(){
+  scene.beginScreenDrawing();
+  text("speed: " + (float)speed,5,20);
+  scene.endScreenDrawing();
 }
