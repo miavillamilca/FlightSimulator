@@ -5,20 +5,20 @@ import remixlab.dandelion.geom.*;
 
 public Scene scene;
 InteractiveFrame Avion;
+
 PShape plane;
+
 float speed=0;
 float maxSpeed=0.3;
+float angle=5;
+
 float posZ=0;
 float posX=0;
 float posY=0;
 float orX=-90;
 float orY=0;
 float orZ=90;
-float eyeZ=520;
-float angle=3;
-float verticalAngle=0;
-float yawAngle=0;
-float rollAngle= 0;
+
 boolean up = false;
 boolean down = false;
 boolean leftRoll = false;
@@ -36,14 +36,10 @@ void setup(){
   Avion.setTrackingEyeDistance(30);
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(PI);
-  //scene.setAvatar(Avion);
+  scene.setAvatar(Avion);
   scene.showAll();
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
-  //Avion.removeKeyBindings();
-  //Avion.removeBindings();
-  //Avion.removeMotionBindings();
-  //Avion.scale(100);
   print(Avion.info());
 }
 
@@ -93,8 +89,6 @@ void keyPressed(){
     rightYaw=false;}
   }
   if(key == 'Q'){//LEFT YAW
-    //yawAngle-=angle;
-    //plane.rotateY(-angle);
     orZ-=angle;
     if(orZ<0){
     leftYaw=true;}
@@ -102,17 +96,13 @@ void keyPressed(){
     leftYaw=false;}
   } 
   if(key == 'D'){//RIGHT ROLL
-    //rollAngle+=angle;
     orX+=angle;
-    //plane.rotateZ(angle);
     if(orX>0){
     rightRoll=true;}
     if(orX==0){
     rightRoll=false;}
   }
   if(key == 'A'){//LEFT ROLL
-    //rollAngle-=angle;
-    //plane.rotateZ(-angle);
     orX-=angle;
     if(orX<0){
     leftRoll=true;}
