@@ -1,16 +1,21 @@
 import remixlab.dandelion.core.*;
 import remixlab.proscene.*;
-
 import remixlab.dandelion.geom.*;
+
+
 public Scene scene;
 InteractiveFrame Avion;
 PShape plane;
 float speed=0;
+float maxSpeed=0.3;
 float posZ=0;
 float posX=0;
 float posY=0;
+float orX=-90;
+float orY=0;
+float orZ=90;
 float eyeZ=520;
-float angle=0.01;
+float angle=3;
 float verticalAngle=0;
 float yawAngle=0;
 float rollAngle= 0;
@@ -26,119 +31,104 @@ void setup(){
   size(600,600,P3D);
   scene = new Scene(this);
   plane = loadShape("A10.obj");
+  plane.rotateZ(PI);
   Avion = new InteractiveFrame(scene, plane);
-  
-  Avion.scale(5);
- // Ecuaciones para movimiento no borrar
- // Avion.setTrackingEyeDistance(50);
-  //Avion.setTrackingEyeAzimuth(PI);
-  //Avion.setTrackingEyeInclination(PI);
+  Avion.setTrackingEyeDistance(30);
+  Avion.setTrackingEyeAzimuth(PI);
+  Avion.setTrackingEyeInclination(PI);
   //scene.setAvatar(Avion);
-    scene.showAll();
-  
-  
-   //scene = new Scene(this); // create a Scene instance
-  // models = plane;
-  
+  scene.showAll();
+  Avion.setPosition(new Vec(0, 0, 0));
+  Avion.setRotation(radians(orX),orY,radians(orZ),0);
+  //Avion.removeKeyBindings();
+  //Avion.removeBindings();
+  //Avion.removeMotionBindings();
+  //Avion.scale(100);
+  print(Avion.info());
 }
 
 void draw(){
+  if (speed<0){
+  speed=0;}
+  Avion.setOrientation(orX,orY,orZ,0);
   background(255);
   lights();
-  
   scene.drawFrames();
-  
   translate(width/2,height/2);
   rotateZ(PI);
-  scale(25);
-  
-  fill(0);
-  textSize(1);
-  //textAlign(LEFT);
-  textMode(SHAPE);
-  rotateZ(PI);
-  text("speed "+str(speed),3,-10,0);
-  text("posZ "+str(posZ),5,-8,0);
-  rotateZ(-PI);
   moving();
-  
 }
 
 void keyPressed(){
   if (key == CODED) {
-    if (keyCode == SHIFT) {//ACELERADOR
-      speed+=0.001;
-      //posZ-=speed;
-      //plane.translate(posX,posY,posZ);
-      //camera(-400, 0, 0, 0,0,20, 1,1,-1);
+    if (keyCode == SHIFT && speed<maxSpeed) {//ACELERADOR
+      speed+=0.1;
     }
-    if (keyCode == CONTROL){//FRENO
-      speed-=0.001;
-    }
+    if (keyCode == CONTROL && speed>0.1){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
+      speed-=0.1;
   }
-  if(key == 'w'){//PITCH UP
-    verticalAngle+=angle;
-    plane.rotateX(angle);
-    if (verticalAngle>0){
+  }
+  if(key == 'W'){//PITCH UP
+    //verticalAngle+=angle;
+    orY+=angle;
+    if (orY>0){
     up = true;}
-    if (verticalAngle==0){
+    if (orY==0){
     up= false;}
   }
-  if(key == 's'){//PITCH DOWN
-    verticalAngle-=angle;
-    plane.rotateX(-angle);
-    if (verticalAngle<0){
+  if(key == 'S'){//PITCH DOWN
+    //verticalAngle-=angle;
+    orY-=angle;
+    if (orY<0){
     down=true;}
-    if (verticalAngle==0){
+    if (orY==0){
     down=false;}
   }
-  if(key == 'e'){//RIGHT YAW
-    yawAngle+=angle;
-    plane.rotateY(angle);
-    if(yawAngle>0){
+  if(key == 'E'){//RIGHT YAW
+    //yawAngle+=angle;
+    orZ+=angle;
+    if(orZ>0){
     rightYaw=true;}
-    if(yawAngle==0){
+    if(orZ==0){
     rightYaw=false;}
   }
-  if(key == 'q'){//LEFT YAW
-    yawAngle-=angle;
-    plane.rotateY(-angle);
-    if(yawAngle<0){
+  if(key == 'Q'){//LEFT YAW
+    //yawAngle-=angle;
+    //plane.rotateY(-angle);
+    orZ-=angle;
+    if(orZ<0){
     leftYaw=true;}
-    if(yawAngle==0){
+    if(orZ==0){
     leftYaw=false;}
   } 
-  if(key == 'd'){//RIGHT ROLL
-    rollAngle+=angle;
-    plane.rotateZ(angle);
-    if(rollAngle>0){
+  if(key == 'D'){//RIGHT ROLL
+    //rollAngle+=angle;
+    orX+=angle;
+    //plane.rotateZ(angle);
+    if(orX>0){
     rightRoll=true;}
-    if(rollAngle==0){
+    if(orX==0){
     rightRoll=false;}
   }
-  if(key == 'a'){//LEFT ROLL
-    rollAngle-=angle;
-    plane.rotateZ(-angle);
-    if(rollAngle<0){
+  if(key == 'A'){//LEFT ROLL
+    //rollAngle-=angle;
+    //plane.rotateZ(-angle);
+    orX-=angle;
+    if(orX<0){
     leftRoll=true;}
-    if(rollAngle==0){
+    if(orX==0){
     leftRoll=false;}
   }
 }
 
 void moving(){
-  /*
-  if(up == true){
-  posX+=speed*cos(verticalAngle);
-  posZ+=speed*sin(verticalAngle);}
-  if(down == true){
-  posX-=speed*cos(verticalAngle);
-  posZ-=speed*sin(verticalAngle);}
+  if (rightYaw){
+    posX+=speed;
+    posZ-=0.25*speed;
+  }
+  else{
+  posX+=speed;
+}
   
-  */
-  shape(plane);
-  posZ-=speed;
-  plane.translate(posX,posY,posZ);
-  //eyeZ=-posZ;
-  
+  Avion.setPosition(new Vec(posX, posY, posZ));
 }
