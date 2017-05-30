@@ -13,6 +13,7 @@ float speed=0;
 float maxSpeed=0.3;
 float angle=5;
 float aux=0;
+float aux2=0;
 
 float posZ=0;
 float posX=0;
@@ -20,6 +21,9 @@ float posY=0;
 float orX=-90;
 float orY=0;
 float orZ=90;
+float pitchAngle=0;
+float eyeInc=150;
+float eyeDist=30;
 
 boolean up = false;
 boolean down = false;
@@ -68,10 +72,10 @@ void setup(){
   //fondo = new InteractiveFrame(scene, LeftHorizon);
   Piso = new InteractiveFrame(scene, floor);
   Avion = new InteractiveFrame(scene, plane);
-  Avion.setTrackingEyeDistance(30);
+  Avion.setTrackingEyeDistance(eyeDist);
   Avion.setTrackingEyeAzimuth(PI);
-  Avion.setTrackingEyeInclination(radians(150));
-  //scene.setAvatar(Avion);
+  Avion.setTrackingEyeInclination(radians(eyeInc));
+  scene.setAvatar(Avion);
   scene.showAll();
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
@@ -81,9 +85,13 @@ void setup(){
 }
 
 void draw(){
+  Avion.setTrackingEyeDistance(eyeDist);
+  Avion.setTrackingEyeAzimuth(PI);
+  Avion.setTrackingEyeInclination(radians(eyeInc));
   if (speed<0){
   speed=0;}
   Avion.setOrientation(orX,orY,orZ,0);
+  
   background(0);
   lights();
   scene.drawFrames();
@@ -96,27 +104,33 @@ void draw(){
 void keyPressed(){
   if (key == CODED) {
     if (keyCode == SHIFT && speed<maxSpeed) {//ACELERADOR
-      speed+=0.1;
+      speed+=0.01;
+      eyeDist+=0.5;
     }
     if (keyCode == CONTROL && speed>=0){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
-      speed-=0.1;
+      speed-=0.01;
+      eyeDist-=0.5;
   }
   }
   if(key == 'W'){//PITCH UP
     //verticalAngle+=angle;
     orY+=angle;
+    //pitchAngle-=1;
+    //plane.rotateX(radians(pitchAngle));
     if (orY>0){
-    up = true;}
+    down = true;}
     if (orY==0){
-    up= false;}
+    down= false;}
   }
   if(key == 'S'){//PITCH DOWN
     //verticalAngle-=angle;
     orY-=angle;
+    //pitchAngle+=1;
+    //plane.rotateX(-radians(pitchAngle));
     if (orY<0){
-    down=true;}
+    up=true;}
     if (orY==0){
-    down=false;}
+    up=false;}
   }
   if(key == 'E'){//RIGHT YAW
     //yawAngle+=angle;
@@ -151,19 +165,27 @@ void keyPressed(){
 }
 
 void moving(){
- if (leftYaw){
+  if (leftYaw){
     aux=norm(orZ,-90,0);
-    posZ-=(1-aux)*speed;
-    posX+=aux*speed;
+    posX-=(1-aux)*speed;
+    posZ+=aux*speed;
   }
   if(rightYaw){
   aux=norm(orZ,0,90);
   posZ+=(1-aux)*speed;
   posX+=aux*speed;
 }
-  else{
+  if(!up && !down && !leftYaw && !rightYaw){
   posX+=speed;
 }
+  if(up){
+    aux2=norm(orY,0,90);
+    posY-=aux2*speed;
+  }
+  if (down){
+    aux2=norm(orY,-90,0);
+    posY-=aux2*speed;
+  }
   
   Avion.setPosition(new Vec(posX, posY, posZ));
 }
