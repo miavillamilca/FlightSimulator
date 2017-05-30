@@ -4,14 +4,15 @@ import remixlab.dandelion.geom.*;
 
 
 public Scene scene;
-InteractiveFrame Avion;
+InteractiveFrame Avion, Piso, fondo;
 
-PShape plane;
+PShape plane, floor, LeftHorizon;
 PFont font;
 
 float speed=0;
 float maxSpeed=0.3;
 float angle=5;
+
 
 float posZ=0;
 float posX=0;
@@ -35,22 +36,49 @@ void setup(){
   scene = new Scene(this);
   plane = loadShape("A10.obj");
   plane.rotateZ(PI);
+  plane.translate(0,-1,0);
+  
+  //Piso carretera tesxture
+  PImage img = loadImage("img.jpg");
+  floor = createShape();
+  floor.beginShape();
+  floor.texture(img);
+  floor.vertex(0, 0, -50);
+  floor.vertex(100, 0, -50);
+  floor.vertex(100, 0, 50);
+  floor.vertex(0, 0, 50);
+ floor.endShape(CLOSE);
+  //s.translate(50, 50);
+   
+  LeftHorizon = createShape();
+  LeftHorizon.beginShape();
+ 
+  LeftHorizon.fill(0,255,0);
+  LeftHorizon.vertex(0, 0, 50);
+  LeftHorizon.vertex(0, 70, 50);
+  LeftHorizon.vertex(100, 70, 50);
+  LeftHorizon.vertex(100, 0, 50);
+  LeftHorizon.endShape(CLOSE);
+  fondo = new InteractiveFrame(scene, LeftHorizon);
+  Piso = new InteractiveFrame(scene, floor);
   Avion = new InteractiveFrame(scene, plane);
   Avion.setTrackingEyeDistance(30);
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(PI);
-  scene.setAvatar(Avion);
+ // scene.setAvatar(Avion);
   scene.showAll();
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
   print(Avion.info());
+  
+
 }
 
 void draw(){
   if (speed<0){
   speed=0;}
   Avion.setOrientation(orX,orY,orZ,0);
-  background(255);
+  background(0);
   lights();
   scene.drawFrames();
   translate(width/2,height/2);
@@ -64,7 +92,7 @@ void keyPressed(){
     if (keyCode == SHIFT && speed<maxSpeed) {//ACELERADOR
       speed+=0.1;
     }
-    if (keyCode == CONTROL && speed>0.1){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
+    if (keyCode == CONTROL && speed>=0){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
       speed-=0.1;
   }
   }
@@ -113,6 +141,7 @@ void keyPressed(){
     if(orX==0){
     leftRoll=false;}
   }
+ 
 }
 
 void moving(){
