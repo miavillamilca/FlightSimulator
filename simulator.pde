@@ -31,6 +31,7 @@ boolean leftRoll = false;
 boolean rightRoll = false;
 boolean leftYaw = false;
 boolean rightYaw= false;
+boolean shifter = false;
 
 
 void setup(){
@@ -137,7 +138,7 @@ void draw(){
   rotateZ(PI);
   moving();
   drawText();
-  
+  check();
   
 }
 
@@ -157,56 +158,60 @@ void keyPressed(){
     orY+=angle;
     //pitchAngle-=1;
     //plane.rotateX(radians(pitchAngle));
-    if (orY>0){
-    down = true;}
-    if (orY==0){
-    down= false;}
+    //if (orY>0){
+    //down = true;}
+    //if (orY==0){
+    //down= false;}
+    check();
   }
   if(key == 'S'){//PITCH DOWN
     //verticalAngle-=angle;
     orY-=angle;
     //pitchAngle+=1;
     //plane.rotateX(-radians(pitchAngle));
-    if (orY<0){
-    up=true;}
-    if (orY==0){
-    up=false;}
+    //if (orY<0){
+    //up=true;}
+    //if (orY==0){
+    //up=false;}
+    check();
   }
   if(key == 'E'){//RIGHT YAW
     //yawAngle+=angle;
     orZ+=angle;
-    if(orZ>0){
-    rightYaw=true;}
-    if(orZ==0){
-    rightYaw=false;}
+    //if(orZ>0){
+    //rightYaw=true;}
+    //if(orZ==0){
+    //rightYaw=false;}
   }
   if(key == 'Q'){//LEFT YAW
     orZ-=angle;
-    if(orZ<0){
-    leftYaw=true;}
-    if(orZ==0){
-    leftYaw=false;}
+    //if(orZ<90){
+    //leftYaw=true;}
+    //if(orZ==90){
+    //leftYaw=false;}
   } 
-  if(key == 'D'){//RIGHT ROLL
-    orX+=angle;
-    if(orX>0){
-    rightRoll=true;}
-    if(orX==0){
-    rightRoll=false;}
-  }
-  if(key == 'A'){//LEFT ROLL
-    orX-=angle;
-    if(orX<0){
-    leftRoll=true;}
-    if(orX==0){
-    leftRoll=false;}
-  }
+  //if(key == 'D'){//RIGHT ROLL
+  //  orX+=angle;
+  //  if(orX>0){
+  //  rightRoll=true;}
+  //  if(orX==0){
+  //  rightRoll=false;}
+  //}
+  //if(key == 'A'){//LEFT ROLL
+  //  orX-=angle;
+  //  if(orX<0){
+  //  leftRoll=true;}
+  //  if(orX==0){
+  //  leftRoll=false;}
+  //}
+  if (key== 'R'){
+  reset();}
 
 }
 
 void moving(){
   if (leftYaw){
-    aux=norm(orZ,-90,0);
+    aux=norm(orZ,90,180);
     posX-=(1-aux)*speed;
     posZ+=aux*speed;
   }
@@ -219,12 +224,14 @@ void moving(){
   posX+=speed;
 }
   if(up){
-    aux2=norm(orY,0,90);
-    posY-=aux2*speed;
+    aux2=norm(orY,-90,0);
+    posY+=aux2*speed;
+    posX+=aux2*speed;
   }
   if (down){
-    aux2=norm(orY,-90,0);
+    aux2=norm(orY,0,90);
     posY-=aux2*speed;
+    posX+=speed;
   }
   
   Avion.setPosition(new Vec(posX, posY, posZ));
@@ -236,9 +243,48 @@ void  drawText(){
   scene.beginScreenDrawing();
   text("speed: " + (float)speed,5,20);
   text("yaw angle: " + (float)orZ,5,40);
-  text("roll angle: " + (float)orX,5,60);
+  text("pitch angle: " + (float)orY,5,60);
   text("aux: "+ (float)aux,5,80);
+  text("up: "+up,5,100);
+  text("down: "+down,5,120);
+  text("left: "+leftYaw,5,140);
+  text("right: "+rightYaw,5,160);
   scene.endScreenDrawing();
 }
 
+void check(){
+  if (orY<0){
+    up=true;}
+    if (orY==0){
+    up=false;}
+if (orY>0){
+    down=true;}
+    if (orY==0){
+    down=false;}
+    if(orZ<90){
+    leftYaw=true;}
+    if(orZ==90){
+    leftYaw=false;}
+    if(orZ>90){
+    rightYaw=true;}
+    if(orZ==90){
+    rightYaw=false;}
+}
 
+void reset(){
+  speed=0;
+  maxSpeed=0.3;
+  angle=5;
+  aux=0;
+  aux2=0;
+
+  posZ=0;
+  posX=0;
+  posY=0;
+  orX=-90;
+  orY=0;
+  orZ=90;
+  pitchAngle=0;
+  eyeInc=150;
+  eyeDist=30;
+}
