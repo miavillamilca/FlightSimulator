@@ -2,7 +2,6 @@ import remixlab.dandelion.core.*;
 import remixlab.proscene.*;
 import remixlab.dandelion.geom.*;
 
-
 public Scene scene;
 InteractiveFrame Avion, Piso, Fondo, Cerca, Cielo;
 
@@ -14,6 +13,9 @@ float maxSpeed=0.3;
 float angle=5;
 float aux=0;
 float aux2=0;
+float top=0;
+float bottom=0;
+float eyeAux=0;
 
 float posZ=0;
 float posX=0;
@@ -32,6 +34,7 @@ boolean rightRoll = false;
 boolean leftYaw = false;
 boolean rightYaw= false;
 boolean shifter = false;
+boolean shifter2 = false;
 
 
 void setup(){
@@ -49,11 +52,11 @@ void setup(){
   floor.beginShape();
   floor.textureMode(IMAGE);
   floor.texture(img);
+  
   floor.vertex(0, 0, -50, 0 ,0);
   floor.vertex(600, 0, -50,100 ,0);
   floor.vertex(600, 0, 50, 100,100);
   floor.vertex(0, 0, 50, 0 ,100);
-
   floor.endShape(CLOSE);
  
 //Bosque fondo 
@@ -71,7 +74,6 @@ void setup(){
   LeftHorizon.endShape(CLOSE);
   
   //BosqueCerca
-  
   RightHorizon = createShape();
   RightHorizon.beginShape();
   RightHorizon.textureMode(IMAGE);
@@ -93,13 +95,10 @@ void setup(){
   Ceiling.vertex(600, 70, -50, 100, 100);
   Ceiling.vertex(600, 70, 50, 100, 0);
   Ceiling.endShape(CLOSE);
-  
-  
-  
+   
   //Creacion IFrames en la escena
  
   Piso = new InteractiveFrame(scene, floor);
- 
   Cielo = new InteractiveFrame (scene, Ceiling);
   Cerca = new InteractiveFrame(scene, RightHorizon); 
   Fondo = new InteractiveFrame(scene, LeftHorizon);
@@ -107,20 +106,15 @@ void setup(){
   Cerca.removeBindings();
   Fondo.removeBindings();
   Cielo.removeBindings();
-  
   Avion = new InteractiveFrame(scene, plane);
   Avion.setTrackingEyeDistance(eyeDist);
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(radians(eyeInc));
-  
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
   scene.setAvatar(Avion);
   scene.showAll();
   print(Avion.info());
-  
-  
-
 }
 
 void draw(){
@@ -129,8 +123,7 @@ void draw(){
   Avion.setTrackingEyeInclination(radians(eyeInc));
   if (speed<0){
   speed=0;}
-  Avion.setOrientation(orX,orY,orZ,0);
-  
+  Avion.setOrientation(orX,orY,orZ,0);  
   background(0);
   lights();
   scene.drawFrames();
@@ -139,7 +132,7 @@ void draw(){
   moving();
   drawText();
   check();
-  
+  moveEye(); 
 }
 
 void keyPressed(){
@@ -153,42 +146,23 @@ void keyPressed(){
       eyeDist-=0.5;
   }
   }
-  if(key == 'W'){//PITCH UP
-    //verticalAngle+=angle;
+  if(key == 'W'){//PITCH DOWN
     orY+=angle;
-    //pitchAngle-=1;
-    //plane.rotateX(radians(pitchAngle));
-    //if (orY>0){
-    //down = true;}
-    //if (orY==0){
-    //down= false;}
+    bottom-=angle/2;
+    shifter=true;
     check();
   }
-  if(key == 'S'){//PITCH DOWN
-    //verticalAngle-=angle;
+  if(key == 'S'){//PITCH UP
     orY-=angle;
-    //pitchAngle+=1;
-    //plane.rotateX(-radians(pitchAngle));
-    //if (orY<0){
-    //up=true;}
-    //if (orY==0){
-    //up=false;}
+    bottom-=angle/2;
+    shifter2=true;
     check();
   }
   if(key == 'E'){//RIGHT YAW
-    //yawAngle+=angle;
     orZ+=angle;
-    //if(orZ>0){
-    //rightYaw=true;}
-    //if(orZ==0){
-    //rightYaw=false;}
   }
   if(key == 'Q'){//LEFT YAW
     orZ-=angle;
-    //if(orZ<90){
-    //leftYaw=true;}
-    //if(orZ==90){
-    //leftYaw=false;}
   } 
   //if(key == 'D'){//RIGHT ROLL
   //  orX+=angle;
@@ -206,7 +180,6 @@ void keyPressed(){
   //}
   if (key== 'R'){
   reset();}
-
 }
 
 void moving(){
@@ -237,7 +210,6 @@ void moving(){
   Avion.setPosition(new Vec(posX, posY, posZ));
 }
 
-
 void  drawText(){
   fill(255);
   scene.beginScreenDrawing();
@@ -249,6 +221,9 @@ void  drawText(){
   text("down: "+down,5,120);
   text("left: "+leftYaw,5,140);
   text("right: "+rightYaw,5,160);
+  text("shifter: "+shifter,5,180);
+  text("top: "+top,5,200);
+  text("bottom: "+bottom,5,220);
   scene.endScreenDrawing();
 }
 
@@ -269,6 +244,10 @@ if (orY>0){
     rightYaw=true;}
     if(orZ==90){
     rightYaw=false;}
+    if(orY>0){
+    shifter=true;}
+    if(orY<0){
+    shifter=false;}
 }
 
 void reset(){
@@ -277,7 +256,7 @@ void reset(){
   angle=5;
   aux=0;
   aux2=0;
-
+  bottom=0;
   posZ=0;
   posX=0;
   posY=0;
@@ -287,4 +266,20 @@ void reset(){
   pitchAngle=0;
   eyeInc=150;
   eyeDist=30;
+}
+
+void moveEye(){
+  eyeAux=orY;
+  //top=eyeInc+orY/2; 
+  if (bottom<top && !shifter && shifter2){
+    //print(eyeInc);
+    eyeInc-=0.1;
+    Avion.setTrackingEyeInclination(radians(eyeInc));
+    bottom+=0.1;
+  }else{shifter2=false;}
+  if  (bottom<top && shifter && !shifter2){
+    eyeInc+=0.1;
+    Avion.setTrackingEyeInclination(radians(eyeInc));
+    bottom+=0.1;
+  }else{shifter=false;}
 }
