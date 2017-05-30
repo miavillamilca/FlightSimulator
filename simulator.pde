@@ -40,32 +40,38 @@ void setup(){
   
   //Piso carretera tesxture
   PImage img = loadImage("img.jpg");
+  img.resize(150,100);
   floor = createShape();
   floor.beginShape();
+  floor.textureMode(IMAGE);
   floor.texture(img);
-  floor.vertex(0, 0, -50);
-  floor.vertex(100, 0, -50);
-  floor.vertex(100, 0, 50);
-  floor.vertex(0, 0, 50);
- floor.endShape(CLOSE);
+  floor.vertex(0, 0, -50, 0 ,0);
+  floor.vertex(600, 0, -50,100 ,0);
+  floor.vertex(600, 0, 50, 100,100);
+  floor.vertex(0, 0, 50, 0 ,100);
+
+  floor.endShape(CLOSE);
   //s.translate(50, 50);
-   
+  PImage fondo = loadImage("fondo.jpg");
+  fondo.resize(100,100);
   LeftHorizon = createShape();
   LeftHorizon.beginShape();
- 
+  LeftHorizon.textureMode(IMAGE);
+  LeftHorizon.texture(img);
   LeftHorizon.fill(0,255,0);
   LeftHorizon.vertex(0, 0, 50);
   LeftHorizon.vertex(0, 70, 50);
-  LeftHorizon.vertex(100, 70, 50);
-  LeftHorizon.vertex(100, 0, 50);
+  LeftHorizon.vertex(600, 70, 50);
+  LeftHorizon.vertex(600, 0, 50);
   LeftHorizon.endShape(CLOSE);
-  fondo = new InteractiveFrame(scene, LeftHorizon);
+  
+  //fondo = new InteractiveFrame(scene, LeftHorizon);
   Piso = new InteractiveFrame(scene, floor);
   Avion = new InteractiveFrame(scene, plane);
   Avion.setTrackingEyeDistance(30);
   Avion.setTrackingEyeAzimuth(PI);
-  Avion.setTrackingEyeInclination(PI);
- // scene.setAvatar(Avion);
+  Avion.setTrackingEyeInclination(radians(150));
+  //scene.setAvatar(Avion);
   scene.showAll();
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
