@@ -12,7 +12,7 @@ PFont font;
 float speed=0;
 float maxSpeed=0.3;
 float angle=5;
-
+float aux=0;
 
 float posZ=0;
 float posX=0;
@@ -151,10 +151,16 @@ void keyPressed(){
 }
 
 void moving(){
-  if (rightYaw){
-    posX+=speed;
-    posZ-=0.25*speed;
+ if (leftYaw){
+    aux=norm(orZ,-90,0);
+    posZ-=(1-aux)*speed;
+    posX+=aux*speed;
   }
+  if(rightYaw){
+  aux=norm(orZ,0,90);
+  posZ+=(1-aux)*speed;
+  posX+=aux*speed;
+}
   else{
   posX+=speed;
 }
@@ -164,7 +170,11 @@ void moving(){
 
 
 void  drawText(){
+  fill(255);
   scene.beginScreenDrawing();
   text("speed: " + (float)speed,5,20);
+  text("yaw angle: " + (float)orZ,5,40);
+  text("roll angle: " + (float)orX,5,60);
+  text("aux: "+ (float)aux,5,80);
   scene.endScreenDrawing();
 }
