@@ -4,9 +4,9 @@ import remixlab.dandelion.geom.*;
 
 
 public Scene scene;
-InteractiveFrame Avion, Piso, fondo;
+InteractiveFrame Avion, Piso, Fondo, Cerca, Cielo;
 
-PShape plane, floor, LeftHorizon;
+PShape plane, floor, LeftHorizon, RightHorizon, Ceiling;
 PFont font;
 
 float speed=0;
@@ -41,10 +41,9 @@ void setup(){
   plane = loadShape("A10.obj");
   plane.rotateZ(PI);
   plane.translate(0,-1,0);
-  
   //Piso carretera tesxture
   PImage img = loadImage("img.jpg");
-  img.resize(150,100);
+  img.resize(100,100);
   floor = createShape();
   floor.beginShape();
   floor.textureMode(IMAGE);
@@ -55,31 +54,70 @@ void setup(){
   floor.vertex(0, 0, 50, 0 ,100);
 
   floor.endShape(CLOSE);
-  //s.translate(50, 50);
-  PImage fondo = loadImage("fondo.jpg");
-  fondo.resize(100,100);
+ 
+//Bosque fondo 
+  PImage img2 = loadImage("fondo.jpg");
+  img2.resize(100,100);
   LeftHorizon = createShape();
   LeftHorizon.beginShape();
   LeftHorizon.textureMode(IMAGE);
-  LeftHorizon.texture(img);
-  LeftHorizon.fill(0,255,0);
-  LeftHorizon.vertex(0, 0, 50);
-  LeftHorizon.vertex(0, 70, 50);
-  LeftHorizon.vertex(600, 70, 50);
-  LeftHorizon.vertex(600, 0, 50);
+  LeftHorizon.texture(img2);
+ 
+  LeftHorizon.vertex(0, 0, 50, 0, 0);
+  LeftHorizon.vertex(0, 70, 50, 0, 100);
+  LeftHorizon.vertex(600, 70, 50, 100, 100);
+  LeftHorizon.vertex(600, 0, 50, 100, 0);
   LeftHorizon.endShape(CLOSE);
   
-  //fondo = new InteractiveFrame(scene, LeftHorizon);
+  //BosqueCerca
+  
+  RightHorizon = createShape();
+  RightHorizon.beginShape();
+  RightHorizon.textureMode(IMAGE);
+  RightHorizon.texture(img2);
+  RightHorizon.vertex(0, 0, -50, 0, 0);
+  RightHorizon.vertex(0, 70, -50, 0, 100);
+  RightHorizon.vertex(600, 70, -50, 100, 100);
+  RightHorizon.vertex(600, 0, -50, 100, 0);
+  RightHorizon.endShape(CLOSE);
+  
+  PImage img3 = loadImage("sky.jpg");
+  img3.resize(100,100);
+  Ceiling = createShape();
+  Ceiling.beginShape();
+  Ceiling.textureMode(IMAGE);
+  Ceiling.texture(img3);
+  Ceiling.vertex(0, 70, 50, 0, 0);
+  Ceiling.vertex(0, 70, -50, 0, 100);
+  Ceiling.vertex(600, 70, -50, 100, 100);
+  Ceiling.vertex(600, 70, 50, 100, 0);
+  Ceiling.endShape(CLOSE);
+  
+  
+  
+  //Creacion IFrames en la escena
+ 
   Piso = new InteractiveFrame(scene, floor);
+ 
+  Cielo = new InteractiveFrame (scene, Ceiling);
+  Cerca = new InteractiveFrame(scene, RightHorizon); 
+  Fondo = new InteractiveFrame(scene, LeftHorizon);
+  Piso.removeBindings();
+  Cerca.removeBindings();
+  Fondo.removeBindings();
+  Cielo.removeBindings();
+  
   Avion = new InteractiveFrame(scene, plane);
   Avion.setTrackingEyeDistance(eyeDist);
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(radians(eyeInc));
-  scene.setAvatar(Avion);
-  scene.showAll();
+  
   Avion.setPosition(new Vec(0, 0, 0));
   Avion.setRotation(radians(orX),orY,radians(orZ),0);
+  scene.setAvatar(Avion);
+  scene.showAll();
   print(Avion.info());
+  
   
 
 }
@@ -99,6 +137,8 @@ void draw(){
   rotateZ(PI);
   moving();
   drawText();
+  
+  
 }
 
 void keyPressed(){
@@ -161,7 +201,7 @@ void keyPressed(){
     if(orX==0){
     leftRoll=false;}
   }
- 
+
 }
 
 void moving(){
@@ -200,3 +240,5 @@ void  drawText(){
   text("aux: "+ (float)aux,5,80);
   scene.endScreenDrawing();
 }
+
+
