@@ -5,6 +5,9 @@ import remixlab.dandelion.geom.*;
 public Scene scene;
 InteractiveFrame Avion, Piso, Fondo, Cerca, Cielo;
 
+Quat q = new Quat();
+Vec dir= new Vec();
+
 PShape plane, floor, LeftHorizon, RightHorizon, Ceiling;
 PFont font;
 
@@ -12,7 +15,6 @@ float speed=0;
 float maxSpeed=0.3;
 float angle=5;
 float aux=0;
-float aux2=0;
 float top=0;
 float bottom=0;
 float eyeAux=0;
@@ -20,19 +22,14 @@ float eyeAux=0;
 float posZ=0;
 float posX=0;
 float posY=0;
-float orX=-90;
-float orY=0;
-float orZ=90;
-float pitchAngle=0;
+float orX=-180;
+float orY=90;
+float orZ=0;
 float eyeInc=150;
 float eyeDist=30;
+float angleA=0;
+float angleB=0;
 
-boolean up = false;
-boolean down = false;
-boolean leftRoll = false;
-boolean rightRoll = false;
-boolean leftYaw = false;
-boolean rightYaw= false;
 boolean shifter = false;
 boolean shifter2 = false;
 
@@ -111,7 +108,10 @@ void setup(){
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(radians(eyeInc));
   Avion.setPosition(new Vec(0, 0, 0));
-  Avion.setRotation(radians(orX),orY,radians(orZ),0);
+  //Avion.setRotation(radians(orX),orY,radians(orZ),0);
+  
+  q.fromEulerAngles(radians(orX),radians(orY),radians(orZ));
+  Avion.rotate(q);
   scene.setAvatar(Avion);
   scene.showAll();
   print(Avion.info());
@@ -123,7 +123,7 @@ void draw(){
   Avion.setTrackingEyeInclination(radians(eyeInc));
   if (speed<0){
   speed=0;}
-  Avion.setOrientation(orX,orY,orZ,0);  
+  //Avion.setOrientation(orX,orY,orZ,0);  
   background(0);
   lights();
   scene.drawFrames();
@@ -131,131 +131,87 @@ void draw(){
   rotateZ(PI);
   moving();
   drawText();
-  check();
   moveEye(); 
+  //Avion.setPosition(0,0,20);
 }
 
 void keyPressed(){
   if (key == CODED) {
     if (keyCode == SHIFT && speed<maxSpeed) {//ACELERADOR
       speed+=0.01;
-      eyeDist+=0.5;
+      //eyeDist+=0.5;
     }
     if (keyCode == CONTROL && speed>=0){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
       speed-=0.01;
-      eyeDist-=0.5;
+      //eyeDist-=0.5;
   }
   }
   if(key == 'W'){//PITCH DOWN
     orY+=angle;
+    angleA-=angle;
+    q.fromEulerAngles(radians(angle),0,0);
+    Avion.rotate(q);
     bottom-=angle/2;
     shifter=true;
-    check();
   }
   if(key == 'S'){//PITCH UP
     orY-=angle;
+    angleA+=angle;
+    q.fromEulerAngles(-radians(angle),0,0);
+    Avion.rotate(q);
     bottom-=angle/2;
     shifter2=true;
-    check();
   }
   if(key == 'E'){//RIGHT YAW
-    orZ+=angle;
+    orZ-=angle;
+    angleB-=angle;
+    q.fromEulerAngles(0,-radians(angle),0);
+    Avion.rotate(q);
   }
   if(key == 'Q'){//LEFT YAW
-    orZ-=angle;
+    orZ+=angle;
+    angleB+=angle;
+    q.fromEulerAngles(0,radians(angle),0);
+    Avion.rotate(q);
   } 
-  //if(key == 'D'){//RIGHT ROLL
-  //  orX+=angle;
-  //  if(orX>0){
-  //  rightRoll=true;}
-  //  if(orX==0){
-  //  rightRoll=false;}
-  //}
-  //if(key == 'A'){//LEFT ROLL
-  //  orX-=angle;
-  //  if(orX<0){
-  //  leftRoll=true;}
-  //  if(orX==0){
-  //  leftRoll=false;}
-  //}
+  if(key == 'D'){//RIGHT ROLL
+    orX+=angle;
+    q.fromEulerAngles(0,0,radians(angle));
+    Avion.rotate(q);
+  }
+  if(key == 'A'){//LEFT ROLL
+    orX-=angle;
+    q.fromEulerAngles(0,0,-radians(angle));
+    Avion.rotate(q);
+  }
   if (key== 'R'){
   reset();}
 }
 
 void moving(){
-  if (leftYaw){
-    aux=norm(orZ,90,180);
-    posX-=(1-aux)*speed;
-    posZ+=aux*speed;
-  }
-  if(rightYaw){
-  aux=norm(orZ,0,90);
-  posZ+=(1-aux)*speed;
-  posX+=aux*speed;
-}
-  if(!up && !down && !leftYaw && !rightYaw){
-  posX+=speed;
-}
-  if(up){
-    aux2=norm(orY,-90,0);
-    posY+=aux2*speed;
-    posX+=aux2*speed;
-  }
-  if (down){
-    aux2=norm(orY,0,90);
-    posY-=aux2*speed;
-    posX+=speed;
-  }
+  posX+=speed*(cos(radians(angleA))*cos(radians(angleB)));
+  posY+=speed*(sin(radians(angleA)));
+  posZ+=speed*(sin(radians(angleB))*cos(radians(angleA)));
   
-  Avion.setPosition(new Vec(posX, posY, posZ));
+  Avion.setPosition(new Vec(posX,posY,posZ));
 }
 
 void  drawText(){
   fill(255);
   scene.beginScreenDrawing();
   text("speed: " + (float)speed,5,20);
-  text("yaw angle: " + (float)orZ,5,40);
-  text("pitch angle: " + (float)orY,5,60);
-  text("aux: "+ (float)aux,5,80);
-  text("up: "+up,5,100);
-  text("down: "+down,5,120);
-  text("left: "+leftYaw,5,140);
-  text("right: "+rightYaw,5,160);
   text("shifter: "+shifter,5,180);
   text("top: "+top,5,200);
   text("bottom: "+bottom,5,220);
   scene.endScreenDrawing();
 }
 
-void check(){
-  if (orY<0){
-    up=true;}
-    if (orY==0){
-    up=false;}
-if (orY>0){
-    down=true;}
-    if (orY==0){
-    down=false;}
-    if(orZ<90){
-    leftYaw=true;}
-    if(orZ==90){
-    leftYaw=false;}
-    if(orZ>90){
-    rightYaw=true;}
-    if(orZ==90){
-    rightYaw=false;}
-    if(orY>0){
-    shifter=true;}
-    if(orY<0){
-    shifter=false;}
-}
 
 void reset(){
   speed=0;
   maxSpeed=0.3;
   angle=5;
   aux=0;
-  aux2=0;
   bottom=0;
   posZ=0;
   posX=0;
@@ -263,23 +219,17 @@ void reset(){
   orX=-90;
   orY=0;
   orZ=90;
-  pitchAngle=0;
   eyeInc=150;
   eyeDist=30;
 }
 
 void moveEye(){
-  eyeAux=orY;
-  //top=eyeInc+orY/2; 
-  if (bottom<top && !shifter && shifter2){
-    //print(eyeInc);
-    eyeInc-=0.1;
-    Avion.setTrackingEyeInclination(radians(eyeInc));
-    bottom+=0.1;
-  }else{shifter2=false;}
-  if  (bottom<top && shifter && !shifter2){
-    eyeInc+=0.1;
-    Avion.setTrackingEyeInclination(radians(eyeInc));
-    bottom+=0.1;
-  }else{shifter=false;}
+  aux=norm(speed,0,maxSpeed);
+  aux*=20;
+  aux+=30;
+  if(eyeDist<aux){
+    eyeDist+=0.1;
+  }else if (aux<eyeDist){
+    eyeDist-=0.1;
+  }
 }
