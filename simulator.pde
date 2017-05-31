@@ -15,8 +15,6 @@ float speed=0;
 float maxSpeed=0.3;
 float angle=5;
 float aux=0;
-float top=0;
-float bottom=0;
 float eyeAux=0;
 
 float posZ=0;
@@ -30,8 +28,6 @@ float eyeDist=30;
 float angleA=0;
 float angleB=0;
 
-boolean shifter = false;
-boolean shifter2 = false;
 
 
 void setup(){
@@ -108,7 +104,6 @@ void setup(){
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(radians(eyeInc));
   Avion.setPosition(new Vec(0, 0, 0));
-  //Avion.setRotation(radians(orX),orY,radians(orZ),0);
   
   q.fromEulerAngles(radians(orX),radians(orY),radians(orZ));
   Avion.rotate(q);
@@ -121,9 +116,6 @@ void draw(){
   Avion.setTrackingEyeDistance(eyeDist);
   Avion.setTrackingEyeAzimuth(PI);
   Avion.setTrackingEyeInclination(radians(eyeInc));
-  if (speed<0){
-  speed=0;}
-  //Avion.setOrientation(orX,orY,orZ,0);  
   background(0);
   lights();
   scene.drawFrames();
@@ -131,19 +123,16 @@ void draw(){
   rotateZ(PI);
   moving();
   drawText();
-  moveEye(); 
-  //Avion.setPosition(0,0,20);
+  moveEye();
 }
 
 void keyPressed(){
   if (key == CODED) {
     if (keyCode == SHIFT && speed<maxSpeed) {//ACELERADOR
       speed+=0.01;
-      //eyeDist+=0.5;
     }
-    if (keyCode == CONTROL && speed>=0){//FRENO setear en 0.2 ya uqe nunca puede quedase quieto
+    if (keyCode == CONTROL && speed>=0.01){//FRENO
       speed-=0.01;
-      //eyeDist-=0.5;
   }
   }
   if(key == 'W'){//PITCH DOWN
@@ -151,16 +140,12 @@ void keyPressed(){
     angleA-=angle;
     q.fromEulerAngles(radians(angle),0,0);
     Avion.rotate(q);
-    bottom-=angle/2;
-    shifter=true;
   }
   if(key == 'S'){//PITCH UP
     orY-=angle;
     angleA+=angle;
     q.fromEulerAngles(-radians(angle),0,0);
     Avion.rotate(q);
-    bottom-=angle/2;
-    shifter2=true;
   }
   if(key == 'E'){//RIGHT YAW
     orZ-=angle;
@@ -200,9 +185,11 @@ void  drawText(){
   fill(255);
   scene.beginScreenDrawing();
   text("speed: " + (float)speed,5,20);
-  text("shifter: "+shifter,5,180);
-  text("top: "+top,5,200);
-  text("bottom: "+bottom,5,220);
+  text("pitch: "+orY,5,40);
+  text("angleA: "+angleA,5,60);
+  text("angleB: "+angleB,5,80);
+  text("eyeInc: "+eyeInc,5,100);
+  text("Altitute: "+posY,5,120);
   scene.endScreenDrawing();
 }
 
@@ -212,7 +199,6 @@ void reset(){
   maxSpeed=0.3;
   angle=5;
   aux=0;
-  bottom=0;
   posZ=0;
   posX=0;
   posY=0;
@@ -225,6 +211,9 @@ void reset(){
 
 void moveEye(){
   aux=norm(speed,0,maxSpeed);
+  eyeAux=aux;
+  eyeAux*=20;
+  eyeAux+=150;
   aux*=20;
   aux+=30;
   if(eyeDist<aux){
@@ -232,4 +221,9 @@ void moveEye(){
   }else if (aux<eyeDist){
     eyeDist-=0.1;
   }
-}
+  if(eyeInc<eyeAux){
+    eyeInc+=0.1;
+  }else if (eyeInc>eyeAux){
+    eyeInc-=0.1;
+  }
+}  
