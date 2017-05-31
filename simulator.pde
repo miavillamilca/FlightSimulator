@@ -46,10 +46,10 @@ void setup(){
   floor.textureMode(IMAGE);
   floor.texture(img);
   
-  floor.vertex(0, 0, -50, 0 ,0);
-  floor.vertex(600, 0, -50,100 ,0);
-  floor.vertex(600, 0, 50, 100,100);
-  floor.vertex(0, 0, 50, 0 ,100);
+  floor.vertex(0, 0, -80, 0 ,0);
+  floor.vertex(500, 0, -80,100 ,0);
+  floor.vertex(500, 0, 80, 100,100);
+  floor.vertex(0, 0, 80, 0 ,100);
   floor.endShape(CLOSE);
  
 //Bosque fondo 
@@ -60,10 +60,10 @@ void setup(){
   LeftHorizon.textureMode(IMAGE);
   LeftHorizon.texture(img2);
  
-  LeftHorizon.vertex(0, 0, 50, 0, 0);
-  LeftHorizon.vertex(0, 70, 50, 0, 100);
-  LeftHorizon.vertex(600, 70, 50, 100, 100);
-  LeftHorizon.vertex(600, 0, 50, 100, 0);
+  LeftHorizon.vertex(0, 0, 80, 0, 0);
+  LeftHorizon.vertex(0, 120, 80, 0, 100);
+  LeftHorizon.vertex(500, 120, 80, 100, 100);
+  LeftHorizon.vertex(500, 0, 80, 100, 0);
   LeftHorizon.endShape(CLOSE);
   
   //BosqueCerca
@@ -71,10 +71,10 @@ void setup(){
   RightHorizon.beginShape();
   RightHorizon.textureMode(IMAGE);
   RightHorizon.texture(img2);
-  RightHorizon.vertex(0, 0, -50, 0, 0);
-  RightHorizon.vertex(0, 70, -50, 0, 100);
-  RightHorizon.vertex(600, 70, -50, 100, 100);
-  RightHorizon.vertex(600, 0, -50, 100, 0);
+  RightHorizon.vertex(0, 0, -80, 0, 0);
+  RightHorizon.vertex(0, 120, -80, 0, 100);
+  RightHorizon.vertex(500, 120, -80, 100, 100);
+  RightHorizon.vertex(500, 0, -80, 100, 0);
   RightHorizon.endShape(CLOSE);
   
   PImage img3 = loadImage("sky.jpg");
@@ -83,10 +83,10 @@ void setup(){
   Ceiling.beginShape();
   Ceiling.textureMode(IMAGE);
   Ceiling.texture(img3);
-  Ceiling.vertex(0, 70, 50, 0, 0);
-  Ceiling.vertex(0, 70, -50, 0, 100);
-  Ceiling.vertex(600, 70, -50, 100, 100);
-  Ceiling.vertex(600, 70, 50, 100, 0);
+  Ceiling.vertex(0, 120, 80, 0, 0);
+  Ceiling.vertex(0, 120, -80, 0, 100);
+  Ceiling.vertex(500, 120, -80, 100, 100);
+  Ceiling.vertex(500, 120, 80, 100, 0);
   Ceiling.endShape(CLOSE);
    
   //Creacion IFrames en la escena
